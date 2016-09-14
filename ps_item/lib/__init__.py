@@ -5,7 +5,7 @@ item command
 
 Clear-Item
 Clear-ItemProperty
-Copy-Item
+作成済み: Copy-Item
 Copy-ItemProperty
 Get-ChildItem
 Get-ControlPanelItem
@@ -15,9 +15,9 @@ Get-ItemPropertyValue
 Invoke-Item
 Move-Item
 Move-ItemProperty
-New-Item
+作成済み: New-Item
 New-ItemProperty
-Remove-Item
+作成済み: Remove-Item
 Remove-ItemProperty
 Rename-Item
 Rename-ItemProperty
@@ -38,6 +38,7 @@ Get-WebItemState
 """
 import os
 import sys
+import shutil
 
 
 def new_item(path, item_type, value=""):
@@ -55,4 +56,34 @@ def new_item(path, item_type, value=""):
         os.makedirs(path)
 
     print path + " を作成しました。"
+    sys.exit(0)
+
+
+def remove_item(path, recurse=False):
+    if not os.path.exists(path):
+        print path + " は存在しません。"
+        sys.exit(1)
+
+    if os.path.isfile(path):
+        os.remove(path)
+    elif os.path.isdir(path) and recurse:
+        shutil.rmtree(path)
+    elif os.path.isdir(path) and not recurse:
+        os.rmdir(path)
+
+    print path + " を削除しました。"
+    sys.exit(0)
+
+
+def copy_item(path, destination):
+    if not os.path.exists(path):
+        print path + " は存在しません。"
+        sys.exit(1)
+
+    if os.path.isfile(path):
+        shutil.copy(path, destination)
+    elif os.path.isdir(path):
+        shutil.copytree(path, destination)
+
+    print path + " を " + destination + " へコピーしました。"
     sys.exit(0)
