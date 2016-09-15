@@ -1,41 +1,4 @@
 # coding: utf-8
-"""
-item command
-------------
-
-Clear-Item
-Clear-ItemProperty
-作成済み: Copy-Item
-Copy-ItemProperty
-Get-ChildItem
-Get-ControlPanelItem
-Get-Item
-Get-ItemProperty
-Get-ItemPropertyValue
-Invoke-Item
-Move-Item
-Move-ItemProperty
-作成済み: New-Item
-New-ItemProperty
-作成済み: Remove-Item
-Remove-ItemProperty
-Rename-Item
-Rename-ItemProperty
-Set-Item
-Set-ItemProperty
-Show-ControlPanelItem
-Get-TestDriveItem
-Get-DAEntryPointTableItem
-New-DAEntryPointTableItem
-Remove-DAEntryPointTableItem
-Rename-DAEntryPointTableItem
-Reset-DAEntryPointTableItem
-Set-DAEntryPointTableItem
-Start-WebItem
-Stop-WebItem
-Restart-WebItem
-Get-WebItemState
-"""
 import os
 import sys
 import shutil
@@ -87,3 +50,36 @@ def copy_item(path, destination):
 
     print path + " を " + destination + " へコピーしました。"
     sys.exit(0)
+
+def move_item(path, destination):
+    if not os.path.exists(path):
+        print path+" は存在しません。"
+        sys.exit(1)
+
+    shutil.move(path,destination)
+    print path+" を "+destination+" へ移動しました。"
+    sys.exit(0)
+
+def get_child_item(path=".",recurse=False):
+    if not os.path.exists(path):
+        print path+" は存在しません。"
+        sys.exit(1)
+
+    if not recurse:
+        result=os.listdir(path)
+    elif recurse:
+        base_list=os.walk(path)
+        dir_list=[]
+        result=[]
+
+        for root, dirs, files in base_list:
+            dir_list.append(root)
+
+        for i in dir_list:
+            content_list=os.listdir(i)
+
+            for j in content_list:
+                result.append(os.path.join(i,j))
+
+    result.sort()
+    return result
