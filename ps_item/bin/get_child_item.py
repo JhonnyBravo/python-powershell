@@ -21,14 +21,14 @@ def main():
         default=False,
         help="一覧を再起的に取得します。")
     args = parser.parse_args()
-    result=lib.get_child_item(args.path, args.recurse)
+    result = lib.get_child_item(args.path, args.recurse)
 
-    if len(result)>0:
+    if len(result) > 0:
         print ""
 
         for i in result:
             if os.path.isdir(i):
-                print "\nディレクトリ: "+i+"\n"
+                print "\nディレクトリ: " + i + "\n"
             else:
                 print i
 
