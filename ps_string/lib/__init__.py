@@ -1,11 +1,18 @@
 # coding: utf8
-import os,sys,re
+import os
+import sys
+import re
 
-def select_string(string_list,pattern):
-    result=[]
 
-    for line in string_list:
-        if re.search(pattern,line):
-            result.append(line.rstrip("\r\n"))
+def select_string(input_list, pattern, not_match=False):
+    result = []
+
+    for line in input_list:
+        if not_match:
+            if not re.search(pattern, line):
+                result.append(line.rstrip("\r\n"))
+        else:
+            if re.search(pattern, line):
+                result.append(line.rstrip("\r\n"))
 
     return result
