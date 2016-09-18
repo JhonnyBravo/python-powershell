@@ -1,0 +1,14 @@
+String Command
+==============
+
+ConvertFrom-SddlString
+Convert-String
+ConvertFrom-String
+ConvertFrom-StringData
+Out-String
+実装中。 notmatch オプション未実装: Select-String
+ConvertFrom-SecureString
+ConvertTo-SecureString
+
+
+
