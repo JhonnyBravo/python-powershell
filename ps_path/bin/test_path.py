@@ -18,7 +18,7 @@ def main():
         help="存在を確認するパス。")
     parser.add_argument(
         "--path-type",
-        choices=["any","leaf","container"],
+        choices=["any", "leaf", "container"],
         default="any",
         help="""
             * leaf: 指定したパスが存在し、
