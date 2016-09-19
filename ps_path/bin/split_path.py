@@ -32,9 +32,9 @@ def main():
     args = parser.parse_args()
 
     if not args.leaf and not args.qualifier:
-        args.parent=True
+        args.parent = True
 
-    result = lib.split_path(args.path, args.leaf,args.qualifier,args.parent)
+    result = lib.split_path(args.path, args.leaf, args.qualifier, args.parent)
 
     print result
     sys.exit(0)
