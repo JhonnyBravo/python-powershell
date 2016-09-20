@@ -36,7 +36,7 @@ def main():
 
     result = lib.split_path(args.path, args.leaf, args.qualifier, args.parent)
 
-    print result
+    print(result)
     sys.exit(0)
 
 if __name__ == "__main__":
