@@ -19,7 +19,7 @@ def main():
 
     if len(result) > 0:
         for i in result:
-            print i
+            print(i)
 
 if __name__ == "__main__":
     main()
