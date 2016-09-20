@@ -24,13 +24,13 @@ def main():
     result = lib.get_child_item(args.path, args.recurse)
 
     if len(result) > 0:
-        print ""
+        print("")
 
         for i in result:
             if os.path.isdir(i):
-                print "\nディレクトリ: " + i + "\n"
+                print("\nディレクトリ: " + i + "\n")
             else:
-                print i
+                print(i)
 
         sys.exit(0)
 
