@@ -9,7 +9,7 @@ except IOError:
 
 setup(
     name="python-powershell",
-    version="0.1",
+    version="1.0",
     description="PowerShell Commands for Python.",
     author="Jhonny Bravo",
     author_email="sanfranceshika5@gmail.com",
