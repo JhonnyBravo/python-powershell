@@ -34,10 +34,10 @@ def main():
     result = lib.test_path(args.path, args.path_type)
 
     if result:
-        print result
+        print(result)
         sys.exit(0)
     if not result:
-        print result
+        print(result)
         sys.exit(1)
 
 if __name__ == "__main__":
