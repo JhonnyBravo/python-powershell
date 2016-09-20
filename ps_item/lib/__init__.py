@@ -6,13 +6,13 @@ import shutil
 
 def test_path(path):
     if not os.path.exists(path):
-        print path + " は存在しません。"
+        print(path + " は存在しません。")
         sys.exit(1)
 
 
 def new_item(path, item_type, value=""):
     if os.path.exists(path):
-        print path + " は既に存在します。"
+        print(path + " は既に存在します。")
         sys.exit(1)
 
     if item_type == "file":
@@ -24,7 +24,7 @@ def new_item(path, item_type, value=""):
     elif item_type == "directory":
         os.makedirs(path)
 
-    print path + " を作成しました。"
+    print(path + " を作成しました。")
     sys.exit(0)
 
 
@@ -38,7 +38,7 @@ def remove_item(path, recurse=False):
     elif os.path.isdir(path) and not recurse:
         os.rmdir(path)
 
-    print path + " を削除しました。"
+    print(path + " を削除しました。")
     sys.exit(0)
 
 
@@ -50,7 +50,7 @@ def copy_item(path, destination):
     elif os.path.isdir(path):
         shutil.copytree(path, destination)
 
-    print path + " を " + destination + " へコピーしました。"
+    print(path + " を " + destination + " へコピーしました。")
     sys.exit(0)
 
 
@@ -58,7 +58,7 @@ def move_item(path, destination):
     test_path(path)
 
     shutil.move(path, destination)
-    print path + " を " + destination + " へ移動しました。"
+    print(path + " を " + destination + " へ移動しました。")
     sys.exit(0)
 
 
