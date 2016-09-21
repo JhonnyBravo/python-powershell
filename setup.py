@@ -9,7 +9,7 @@ except Exception:
 
 setup(
     name="python-powershell",
-    version="1.0",
+    version="1.1",
     description="PowerShell Commands for Python.",
     author="Jhonny Bravo",
     author_email="sanfranceshika5@gmail.com",
