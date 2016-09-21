@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 try:
     long_description = open("README.md").read()
-except IOError:
+except Exception:
     long_description = ""
 
 setup(
