@@ -25,7 +25,6 @@ def new_item(path, item_type, value=""):
         os.makedirs(path)
 
     print(path + " を作成しました。")
-    sys.exit(0)
 
 
 def remove_item(path, recurse=False):
@@ -39,7 +38,6 @@ def remove_item(path, recurse=False):
         os.rmdir(path)
 
     print(path + " を削除しました。")
-    sys.exit(0)
 
 
 def copy_item(path, destination):
@@ -51,7 +49,6 @@ def copy_item(path, destination):
         shutil.copytree(path, destination)
 
     print(path + " を " + destination + " へコピーしました。")
-    sys.exit(0)
 
 
 def move_item(path, destination):
@@ -59,7 +56,6 @@ def move_item(path, destination):
 
     shutil.move(path, destination)
     print(path + " を " + destination + " へ移動しました。")
-    sys.exit(0)
 
 
 def get_child_item(path=".", recurse=False):
