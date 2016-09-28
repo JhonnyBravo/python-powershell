@@ -9,7 +9,7 @@ except Exception:
 
 setup(
     name="python-powershell",
-    version="1.1",
+    version="1.2",
     description="PowerShell Commands for Python.",
     author="Jhonny Bravo",
     author_email="sanfranceshika5@gmail.com",
@@ -30,7 +30,8 @@ setup(
             "remove_item=ps_item.bin.remove_item:main",
             "split_path=ps_path.bin.split_path:main",
             "test_path=ps_path.bin.test_path:main",
-            "select_string=ps_string.bin.select_string:main"
+            "select_string=ps_string.bin.select_string:main",
+            "invoke_command=ps_command.bin.invoke_command:main"
         ]
     },
     long_description=long_description,
